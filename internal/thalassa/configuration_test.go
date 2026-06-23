@@ -34,7 +34,7 @@ func TestLoadConfigFromEnv(t *testing.T) {
 	t.Setenv("THALASSA_TOKEN", "test-token")
 	t.Setenv("THALASSA_ORGANISATION_ID", testOrg123)
 	t.Setenv("THALASSA_PROJECT_ID", "proj-456")
-	t.Setenv("THALASSA_API_URL", "https://api.example.com")
+	t.Setenv("THALASSA_API_URL", "https://api.thalassa.cloud")
 	t.Setenv("THALASSA_DOMAIN_FILTER", " example.com , test.org ")
 	t.Setenv("THALASSA_DRY_RUN", "true")
 	t.Setenv("THALASSA_HTTP_RETRY_MAX", "5")

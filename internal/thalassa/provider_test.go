@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log/slog"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -17,7 +18,7 @@ import (
 
 const (
 	testExampleZone   = "example.com"
-	testExampleAPIURL = "https://api.example.com"
+	testExampleAPIURL = "https://api.thalassa.cloud"
 	testOrg1          = "org-1"
 	testOrg           = "org"
 	testOrg123        = "org-123"
@@ -69,6 +70,7 @@ func newTestProvider(client dnsAPI, domains ...string) *Provider {
 		client:       client,
 		domainFilter: endpoint.NewDomainFilter(domains),
 		workers:      2,
+		log:          slog.With("component", "provider"),
 	}
 }
 
